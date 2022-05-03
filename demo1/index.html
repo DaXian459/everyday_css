@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,56 @@
     <link rel="stylesheet" href="./index.css" type="text/css">
     <title>Document</title>
 </head>
+
 <body>
+    <header>
+        <a href="#" class="logo">DaXian</a>
+        <div class="righSide">
+            <div class="btns dayNight">
+                <ion-icon name="moon-outline"></ion-icon>
+                <ion-icon name="sunny-outline"></ion-icon>
+            </div>
+            <div class="btns menuToggle">
+                <ion-icon name="menu-outline"></ion-icon>
+                <ion-icon name="close-outline"></ion-icon>
+            </div>
+        </div>
+    </header>
     <section class="main">
+        <h2>Flow</h2>
         <video src="./assets/video.mp4" autoplay loop muted type="mp4"></video>
         <img src="./assets/mask.jpg" alt="" class="mask">
-    </section> 
+    </section>
+
+    <ul class="navigation">
+        <div>
+            <li><a href="">主页</a></li>
+            <li><a href="">关于</a></li>
+            <li><a href="">分页</a></li>
+            <li><a href="">友联</a></li>
+        </div>
+
+    </ul>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+        let dayNight = document.querySelector('.dayNight')
+        let menuToggle = document.querySelector('.menuToggle')
+        let body = document.querySelector('body')
+        let navigation=document.querySelector('.navigation')
+
+        dayNight.onclick = function () {
+            body.classList.toggle('dark')
+            dayNight.classList.toggle('active')
+        }
+
+        menuToggle.onclick = function () {
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+
+
+    </script>
 </body>
+
 </html>
