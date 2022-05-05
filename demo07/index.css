@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #eaeef0;
+
+}
+
+.container {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.5), -10px -10px 15px rgba(255, 255, 255, 0.9);
+    background: #eaeef0;
+    border: 1px solid #fff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background: #fff;
+    box-shadow: 0 0 50px #ffff5b, 0 0 60px #ffff5b, 0 0 80px #ffff5b, 0 0 100px #ffff5b;
+    right: 20px;
+    top: 20px;
+}
+
+.road {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    background: rgb(79, 78, 78);
+    bottom: 0;
+}
+
+.road::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: rgb(66, 210, 18);
+}
+
+.road::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, transparent 0, transparent 50%, #fff 50%, #fff 100%);
+    background-size: 20px;
+    animation: animateRoad 0.2s linear infinite;
+}
+
+@keyframes animateRoad {
+    0% {
+        background-position-x: 0px;
+    }
+
+    100% {
+        background-position-x: -20px;
+
+    }
+}
+
+.fa-car-side {
+    position: absolute;
+    bottom: 45px;
+    left: 10px;
+    font-size: 3.5em;
+    color: rgb(225, 55, 12);
+    animation: animateCar 1s linear infinite;
+    -webkit-text-stroke: 2px #000;
+}
+
+@keyframes animateCar {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    100% {
+        transform: translate(0px, 2px);
+    }
+}
+
+.fa-cloud {
+    position: absolute;
+    top: calc(20px*var(--i));
+    left: calc(20px*var(--i));
+    font-size: 2.5em;
+    color: #fff;
+    -webkit-text-stroke: 2px #000;
+    z-index: 5;
+    animation: animateCloud 3.5s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+@keyframes animateCloud {
+    0%{
+        transform: translateX(500px);
+    }
+    100%{
+        transform: translateX(-500px);
+    }
+}
