@@ -62,7 +62,7 @@ body {
     height: 2px;
     background: repeating-linear-gradient(90deg, transparent 0, transparent 50%, #fff 50%, #fff 100%);
     background-size: 20px;
-    animation: animateRoad 0.2s linear infinite;
+    animation: animateRoad 0.15s linear infinite;
 }
 
 @keyframes animateRoad {
@@ -84,6 +84,7 @@ body {
     color: rgb(225, 55, 12);
     animation: animateCar 1s linear infinite;
     -webkit-text-stroke: 2px #000;
+    z-index: 5;
 }
 
 @keyframes animateCar {
@@ -109,10 +110,32 @@ body {
 }
 
 @keyframes animateCloud {
-    0%{
+    0% {
         transform: translateX(500px);
     }
-    100%{
+
+    100% {
+        transform: translateX(-500px);
+    }
+}
+
+.fa-tree {
+    position: absolute;
+    color: green;
+    font-size: 5.5em;
+    -webkit-text-stroke: 2px #000;
+    left: calc(var(--t)*10px);
+    bottom: 70px;
+    animation: animateTree 3.5s linear infinite;
+    animation-delay: calc(-1s * var(--t));
+}
+
+@keyframes animateTree {
+    0% {
+        transform: translateX(500px);
+    }
+
+    100% {
         transform: translateX(-500px);
     }
 }
